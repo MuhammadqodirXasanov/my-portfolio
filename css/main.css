@@ -23,7 +23,7 @@ html {
 	overflow-x: hidden;
 }
 body {
-	min-width: 375px;
+	min-width: 380px;
 	background: var(--bg-color);
 	color: var(--text-color);
 }
@@ -133,11 +133,18 @@ span {
 	margin-bottom: 10px;
 }
 .home__skills-list li {
+	display: flex;
+	gap: 5px;
+	align-items: center;
 	font-size: 13px;
 	letter-spacing: 0.5px;
 	list-style-type: disc;
 	margin-left: 25px;
 	font-style: italic;
+}
+.home__skills-icon{
+	width: 20px;
+	color: rgb(0, 123, 255);
 }
 .home__social-media a {
 	display: inline-flex;
