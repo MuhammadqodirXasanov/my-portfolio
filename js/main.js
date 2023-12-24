@@ -48,7 +48,7 @@ window.onscroll = () => {
 
 // Scroll Reveal
 ScrollReveal({
-	distance: '80px',
+	distance: '100px',
 	duration: 1000,
 	delay: 100,
 });
@@ -70,62 +70,11 @@ ScrollReveal({ reset: true });
 
 // Typed.js
 const typed = new Typed('.multiple-text', {
-	strings: [
-		'Frontend Developer!',
-		'Backend Developer!',
-		'MERNStack Developer!',
-		'FullStack Developer!',
-	],
-	typeSpeed: 50,
-	backSpeed: 50,
-	backDelay: 500,
+	strings: ['Frontend Developer!', 'Software engineer!', 'Web Developer!'],
+	typeSpeed: 35,
+	backSpeed: 35,
+	backDelay: 1500,
 	loop: true,
-});
-
-// contact part
-form.addEventListener('submit', (e) => {
-	e.preventDefault();
-
-	async function contact() {
-		const response = await fetch('http://localhost:2300/contact', {
-			method: 'POST',
-			body: JSON.stringify({
-				firstName: firstName.value,
-				lastName: lastName.value,
-				phoneNumber: phoneNumber.value,
-				email: email.value,
-				message: message.value,
-			}),
-		});
-		const contact = await response.json();
-		return contact;
-	}
-
-	contact()
-		.then((data) => data)
-		.catch((err) => err);
-
-	firstName.value = '';
-	lastName.value = '';
-	phoneNumber.value = '';
-	email.value = '';
-	message.value = '';
-
-	msgText.innerHTML = 'Message sent!';
-
-	msg.style.transform = 'translateX(0)';
-
-	setTimeout(() => {
-		msg.style.transform = 'translateX(120%)';
-	}, 4000);
-
-	if (msg.style.transform == 'translateX(120%)') {
-		msg.style.display = 'none';
-	}
-});
-
-msgx.addEventListener('click', () => {
-	msg.style.transform = 'translateX(120%)';
 });
 
 // Alan AI
@@ -149,14 +98,8 @@ var alanBtnInstance = alanBtn({
 				case 'projects':
 					window.location.href = '#portfolios';
 					break;
-				case 'contact':
-					window.location.href = '#contact';
-					break;
 				case 'resume':
-					window.location.href = '../../client/My Resume.pdf';
-					break;
-				case 'order':
-					window.location.href = '#contact';
+					window.location.href = '../My Resume.pdf';
 					break;
 				// projects
 				case '1':
@@ -222,44 +165,6 @@ var alanBtnInstance = alanBtn({
 			case 'ms':
 				message.value = commandData.data;
 				break;
-			case 'sb':
-				form.submit();
-				async function contact() {
-					const response = await fetch('http://localhost:2300/contact', {
-						method: 'POST',
-						body: JSON.stringify({
-							firstName: firstName.value,
-							lastName: lastName.value,
-							phoneNumber: phoneNumber.value,
-							email: email.value,
-							message: message.value,
-						}),
-					});
-					const contact = await response.json();
-					return contact;
-				}
-
-				contact()
-					.then((data) => data)
-					.catch((err) => err);
-
-				firstName.value = '';
-				lastName.value = '';
-				phoneNumber.value = '';
-				email.value = '';
-				message.value = '';
-
-				msgText.innerHTML = 'Message sent!';
-
-				msg.style.transform = 'translateX(0)';
-
-				setTimeout(() => {
-					msg.style.transform = 'translateX(120%)';
-				}, 4000);
-
-				if (msg.style.transform == 'translateX(120%)') {
-					msg.style.display = 'none';
-				}
 		}
 	},
 	rootEl: document.getElementById('alan-btn'),
