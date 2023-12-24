@@ -136,15 +136,14 @@ span {
 	display: flex;
 	gap: 5px;
 	align-items: center;
+	font-style: italic;
 	font-size: 13px;
+	margin-left: 25px;
 	letter-spacing: 0.5px;
 	list-style-type: disc;
-	margin-left: 25px;
-	font-style: italic;
 }
 .home__skills-icon{
 	width: 20px;
-	color: rgb(0, 123, 255);
 }
 .home__social-media a {
 	display: inline-flex;
